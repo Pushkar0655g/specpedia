@@ -49,8 +49,7 @@ export default function ChatModal({ item, initialPrompt, onClose }) {
     setLoading(true);
 
     try {
-      const res = await axios.post('http://localhost:5000/api/ai/chat', {
-        message: currentInput,
+const res = await axios.post('https://specpedia-api.onrender.com/api/ai/chat', {        message: currentInput,
         context: item || null
       });
       setMessages(prev => [...prev, { role: 'ai', content: res.data.reply }]);

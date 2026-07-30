@@ -19,7 +19,7 @@ export default function Home() {
   const [compareItem, setCompareItem] = useState(null);
 
   useEffect(() => {
-    fetch('http://localhost:5000/api/items')
+    fetch('https://specpedia-api.onrender.com/api/items')
       .then(res => res.json())
       .then(data => { setItems(data); setLoading(false); })
       .catch(err => { console.error(err); setLoading(false); });
