@@ -2,7 +2,6 @@ import express from 'express';
 import cors from 'cors';
 import dotenv from 'dotenv';
 import itemsRouter from './routes/items.js';
-import aiRouter from './routes/ai.js';
 import chatRouter from './routes/chat.js';
 
 dotenv.config();
@@ -19,9 +18,8 @@ app.get('/', (req, res) => {
 });
 
 app.use('/api/items', itemsRouter);
-app.use('/api/ai', aiRouter);
-app.use('/api/ai', chatRouter); // Mounting the chat route
+app.use('/api/ai', chatRouter); // Mounting the Groq chat route
 
 app.listen(PORT, () => {
-  console.log(`Server running on http://localhost:${PORT}`);
+  console.log(`Server running on port ${PORT}`);
 });
