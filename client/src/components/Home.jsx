@@ -52,14 +52,14 @@ export default function Home() {
         <div className="absolute inset-0 z-0 bg-gradient-to-b from-[var(--bg)] via-[var(--bg)]/70 to-[var(--bg)]"></div>
         
         <div className="relative z-10 max-w-5xl mx-auto px-6 flex flex-col items-center">
-          <motion.span 
+                    <motion.span 
             initial={{ opacity: 0, y: 10 }} 
             whileInView={{ opacity: 1, y: 0 }} 
             viewport={{ once: false, amount: 0.5 }}
             transition={{ duration: 0.5 }}
             className="inline-block px-3 py-1 mb-16 text-[10px] font-bold tracking-[0.2em] border border-[var(--border)] text-[var(--text-secondary)] font-mono-tech uppercase bg-[var(--bg-elevated)]/50 backdrop-blur-sm"
           >
-            // Press Cmd + K to Search
+             The Ultimate AI-Powered Product Encyclopedia
           </motion.span>
           
           {/* 1. FLYING BRAND NAME (SpecPedia) */}
