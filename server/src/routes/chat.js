@@ -5,7 +5,21 @@ import dotenv from 'dotenv';
 dotenv.config();
 const router = express.Router();
 
-const groq = new Groq({ apiKey: process.env.GROQ_API_KEY });
+const getGroqClient = () => {
+  const apiKey = process.env.GROQ_API_KEY;
+  if (!apiKey) {
+    throw new Error("GROQ_API_KEY is missing from environment variables.");
+  }
+  return new Groq({ apiKey });
+};
+
+// Candidate models in preference order (with fallbacks if a model is decommissioned or unavailable)
+const SUPPORTED_MODELS = [
+  process.env.GROQ_MODEL,
+  'openai/gpt-oss-120b',
+  'qwen/qwen3.8-27b',
+  'openai/gpt-oss-20b'
+].filter(Boolean);
 
 router.post('/chat', async (req, res) => {
   try {
@@ -14,6 +28,8 @@ router.post('/chat', async (req, res) => {
     if (!message) {
       return res.status(400).json({ error: "Message is required" });
     }
+
+    const groq = getGroqClient();
 
     // Highly engineered system prompt
     let systemPrompt = `You are SpecPedia AI, an expert product specification assistant. 
@@ -27,15 +43,33 @@ router.post('/chat', async (req, res) => {
 
     console.log(`Sending to Groq: "${message}"`);
 
-    const chatCompletion = await groq.chat.completions.create({
-      messages: [
-        { role: "system", content: systemPrompt },
-        { role: "user", content: message }
-      ],
-      model: "llama-3.1-8b-instant", 
-      temperature: 0.4, // Lower temperature = more factual, less creative/hallucinating
-      max_tokens: 800,
-    });
+    // Try primary and fallback models to prevent downtime if one model is decommissioned or rate-limited
+    const modelsToTry = [...new Set(SUPPORTED_MODELS)];
+    let chatCompletion = null;
+    let lastError = null;
+
+    for (const model of modelsToTry) {
+      try {
+        chatCompletion = await groq.chat.completions.create({
+          messages: [
+            { role: "system", content: systemPrompt },
+            { role: "user", content: message }
+          ],
+          model,
+          temperature: 0.4,
+          max_tokens: 800,
+        });
+        console.log(`Groq response generated using model: ${model}`);
+        break;
+      } catch (err) {
+        console.warn(`Model ${model} failed: ${err.message}. Trying next candidate...`);
+        lastError = err;
+      }
+    }
+
+    if (!chatCompletion) {
+      throw lastError || new Error("No Groq model was able to respond.");
+    }
 
     const aiResponse = chatCompletion.choices[0]?.message?.content || "I couldn't generate a response.";
     res.json({ reply: aiResponse });
@@ -43,7 +77,8 @@ router.post('/chat', async (req, res) => {
   } catch (error) {
     console.error("=== GROQ API ERROR ===");
     console.error(error.message);
-    res.status(500).json({ error: "Failed to fetch AI response" });
+    if (error.error) console.error(error.error);
+    res.status(500).json({ error: error.message || "Failed to fetch AI response" });
   }
 });
 

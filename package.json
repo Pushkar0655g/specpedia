@@ -1,4 +1,11 @@
 {
+  "name": "specpedia",
+  "version": "1.0.0",
+  "scripts": {
+    "build": "npm --prefix client run build",
+    "client": "npm --prefix client run dev",
+    "server": "npm --prefix server run dev"
+  },
   "dependencies": {
     "@google/generative-ai": "^0.24.1",
     "@supabase/supabase-js": "^2.110.9",
@@ -8,3 +15,4 @@
     "nodemon": "^3.1.14"
   }
 }
+

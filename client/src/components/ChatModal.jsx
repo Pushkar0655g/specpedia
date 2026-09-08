@@ -2,6 +2,8 @@ import React, { useState, useRef, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import axios from 'axios';
 
+const API = import.meta.env.VITE_API_URL || 'http://localhost:5000';
+
 // A simple markdown formatter to render **bold** and bullet points
 const formatAIResponse = (text) => {
   return text.split('\n').map((line, i) => {
@@ -49,7 +51,8 @@ export default function ChatModal({ item, initialPrompt, onClose }) {
     setLoading(true);
 
     try {
-const res = await axios.post('https://specpedia-api.onrender.com/api/ai/chat', {        message: currentInput,
+      const res = await axios.post(`${API}/api/ai/chat`, {
+        message: currentInput,
         context: item || null
       });
       setMessages(prev => [...prev, { role: 'ai', content: res.data.reply }]);

@@ -4,6 +4,8 @@ import ChatModal from './ChatModal';
 import axios from 'axios';
 import { getBrandGradient } from '../utils/brandGradients';
 
+const API = import.meta.env.VITE_API_URL || 'http://localhost:5000';
+
 export default function ProductModal({ item, onClose }) {
   const [isChatOpen, setIsChatOpen] = useState(false);
   const [tooltip, setTooltip] = useState({ key: null, text: null, loading: false });
@@ -15,7 +17,7 @@ export default function ProductModal({ item, onClose }) {
     }
     setTooltip({ key, text: null, loading: true });
     try {
-      const res = await axios.post(`${import.meta.env.VITE_API_URL}/api/ai/chat`, {
+      const res = await axios.post(`${API}/api/ai/chat`, {
         message: `Explain what "${key}: ${value}" means on a smartphone in exactly 1 simple sentence.`
       });
       setTooltip({ key, text: res.data.reply, loading: false });
