@@ -1,38 +1,145 @@
-:root[data-theme="blueprint"] {
-  --bg: #0B1220;
-  --bg-elevated: #0F1826;
-  --grid-line: rgba(79, 209, 232, 0.055);
-  --text-primary: #E7ECF3;
-  --text-secondary: #8CA0B8;
-  --text-muted: #7C8DA3;
-  --accent: #F5A623;
-  --accent-contrast: #1a1000;
-  --accent-2: #4FD1E8;
-  --border: rgba(255,255,255,0.08);
+/* ═══════════════════════════════════════════════════════════════════════
+   SPEC CODEX — Ancient Manuscript & Midnight Design Token System
+   ═══════════════════════════════════════════════════════════════════════ */
+
+:root {
+  /* ── Backgrounds ── */
+  --color-bg-primary: #F4EFE6;
+  --color-bg-surface: #EBE4D5;
+  --color-bg-surface-2: #DFD7C6;
+  --color-bg-input: #F7F3EA;
+  --color-bg-marginalia: #F2EBDE;
+
+  /* ── Text ── */
+  --color-text-primary: #1B1B1B;
+  --color-text-secondary: #4A4A4A;
+  --color-text-inverse: #F9F7F0;
+  --color-text-muted: #8A8272;
+
+  /* ── Brand / Accent ── */
+  --color-primary: #7A3E2C;
+  --color-primary-dark: #5A2C1F;
+  --color-secondary: #2F4F4F;
+  --color-accent: #C9A227;
+  --color-accent-dark: #A8861E;
+
+  /* ── Borders ── */
+  --color-border-heavy: #111111;
+  --color-border-light: #CFC8B8;
+
+  /* ── Status ── */
+  --color-success: #2E7D32;
+  --color-warning: #F57C00;
+  --color-error: #C62828;
+
+  /* ── Typography ── */
+  --font-heading: 'Cinzel', serif;
+  --font-body: 'Inter', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.25rem;
+  --text-2xl: 1.5rem;
+  --text-3xl: 1.875rem;
+  --text-4xl: 2.25rem;
+
+  /* ── Borders (tokens) ── */
+  --border-thick: 4px solid var(--color-border-heavy);
+  --border-thin: 2px solid var(--color-border-heavy);
+  --border-subtle: 1px solid var(--color-border-light);
+
+  /* ── Hard Shadows (neo-brutalist) ── */
+  --shadow-hard-sm: 4px 4px 0 var(--color-border-heavy);
+  --shadow-hard-md: 6px 6px 0 var(--color-border-heavy);
+  --shadow-hard-lg: 8px 8px 0 var(--color-border-heavy);
+
+  /* ── Spacing ── */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.25rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-10: 2.5rem;
+  --space-12: 3rem;
+
+  /* ── Stacks Brand Spine Hues (Parchment) ── */
+  --hue-brand-apple: #D4CDC3;
+  --hue-brand-samsung: #C5D2D6;
+  --hue-brand-google: #DFD8C4;
+  --hue-brand-oneplus: #DEC6BC;
+  --hue-brand-xiaomi: #E4CBB8;
+  --hue-brand-vivo: #C6D8D2;
+  --hue-brand-oppo: #CCD9C8;
+  --hue-brand-nothing: #E0DDD5;
+  --hue-brand-motorola: #CBD4DF;
+  --hue-brand-asus: #D8C8D2;
+  --hue-brand-default: #E2DCD0;
+
+  /* ── Wax Red ── */
+  --color-wax-red: #8B1E0F;
 }
 
-:root[data-theme="midnight"] {
-  --bg: #0A0612;
-  --bg-elevated: #130C22;
-  --grid-line: rgba(168, 85, 247, 0.05);
-  --text-primary: #F1EBFB;
-  --text-secondary: #A79BC4;
-  --text-muted: #8B7FA8;
-  --accent: #A855F7;
-  --accent-contrast: #ffffff;
-  --accent-2: #14F195;
-  --border: rgba(255,255,255,0.08);
-}
+/* ═══════════════════════════════════════════════════════════════════════
+   MIDNIGHT THEME — Ink-black backgrounds, parchment text, gold accent
+   ═══════════════════════════════════════════════════════════════════════ */
+[data-theme='midnight'] {
+  /* ── Backgrounds ── */
+  --color-bg-primary: #141210;
+  --color-bg-surface: #1E1B17;
+  --color-bg-surface-2: #26221C;
+  --color-bg-input: #1E1B17;
+  --color-bg-marginalia: #1E1B17;
 
-:root[data-theme="minimal"] {
-  --bg: #FAFAF8;
-  --bg-elevated: #FFFFFF;
-  --grid-line: rgba(0,0,0,0.035);
-  --text-primary: #14181F;
-  --text-secondary: #565E6C;
-  --text-muted: #7A828F;
-  --accent: #D97706;
-  --accent-contrast: #ffffff;
-  --accent-2: #0891B2;
-  --border: rgba(0,0,0,0.08);
+  /* ── Text ── */
+  --color-text-primary: #F2EBDE;
+  --color-text-secondary: #A8A196;
+  --color-text-inverse: #141210;
+  --color-text-muted: #7A7264;
+
+  /* ── Brand / Accent ── */
+  --color-primary: #E07A5F;
+  --color-primary-dark: #C46247;
+  --color-secondary: #4E7D7D;
+  --color-accent: #E5B83B;
+  --color-accent-dark: #C9A227;
+
+  /* ── Status (lightened for >= 4.5:1 contrast on #1E1B17) ── */
+  --color-success: #4CAF50;
+  --color-warning: #FFA726;
+  --color-error: #EF5350;
+
+  /* ── Borders ── */
+  --color-border-heavy: #000000;
+  --color-border-light: #332E27;
+
+  /* ── Stacks Brand Spine Hues (Midnight Dark-Adjusted) ── */
+  --hue-brand-apple: #2A2724;
+  --hue-brand-samsung: #1B2A32;
+  --hue-brand-google: #322B1E;
+  --hue-brand-oneplus: #361F1A;
+  --hue-brand-xiaomi: #362419;
+  --hue-brand-vivo: #1C2F2B;
+  --hue-brand-oppo: #1F2E20;
+  --hue-brand-nothing: #292724;
+  --hue-brand-motorola: #1D2633;
+  --hue-brand-asus: #2D1E2A;
+  --hue-brand-default: #25211D;
+
+  /* ── Wax Red ── */
+  --color-wax-red: #B83220;
+
+  /* ── Borders (tokens) ── */
+  --border-thick: 4px solid var(--color-border-heavy);
+  --border-thin: 2px solid var(--color-border-heavy);
+  --border-subtle: 1px solid var(--color-border-light);
+
+  /* ── Hard Shadows (neo-brutalist) ── */
+  --shadow-hard-sm: 4px 4px 0 var(--color-border-heavy);
+  --shadow-hard-md: 6px 6px 0 var(--color-border-heavy);
+  --shadow-hard-lg: 8px 8px 0 var(--color-border-heavy);
 }

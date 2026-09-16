@@ -1,20 +1,25 @@
-export const getBrandGradient = (brand) => {
+// Brand accent colors for Swiss-style subtle differentiation (not used as gradients)
+export const getBrandColor = (brand) => {
   switch (brand?.toLowerCase()) {
-    case 'apple': return 'from-zinc-400 via-zinc-600 to-zinc-900';
-    case 'samsung': return 'from-blue-600 via-purple-700 to-black';
-    case 'google': return 'from-blue-400 via-red-500 to-yellow-500';
-    case 'oneplus': return 'from-red-600 via-red-800 to-black';
-    case 'xiaomi': return 'from-orange-500 via-orange-700 to-gray-900';
-    case 'nothing': return 'from-white via-gray-300 to-gray-500';
-    case 'sony': return 'from-indigo-900 via-purple-900 to-black';
-    case 'motorola': return 'from-blue-500 via-cyan-500 to-teal-600';
-    case 'asus': return 'from-red-500 via-rose-700 to-black';
-    case 'vivo': return 'from-blue-500 via-indigo-600 to-purple-800';
-    case 'oppo': return 'from-green-500 via-emerald-600 to-teal-800';
-    case 'realme': return 'from-yellow-500 via-amber-600 to-black';
-    case 'honor': return 'from-cyan-600 via-blue-800 to-indigo-900';
-    case 'poco': return 'from-yellow-400 via-orange-500 to-yellow-600';
-    case 'iqoo': return 'from-black via-orange-700 to-orange-500';
-    default: return 'from-gray-700 via-gray-800 to-black';
+    case 'apple': return '#555555';
+    case 'samsung': return '#1428A0';
+    case 'google': return '#4285F4';
+    case 'oneplus': return '#EB0028';
+    case 'xiaomi': return '#FF6700';
+    case 'nothing': return '#333333';
+    case 'sony': return '#000000';
+    case 'motorola': return '#5C92FA';
+    case 'asus': return '#00529B';
+    case 'vivo': return '#415FFF';
+    case 'oppo': return '#1A8450';
+    case 'realme': return '#F5C900';
+    case 'honor': return '#0AB39C';
+    case 'poco': return '#F4C600';
+    case 'iqoo': return '#FF5500';
+    default: return '#999999';
   }
 };
+
+// Keep backward compat — the old gradient function now returns empty string
+// (no longer used in Swiss design but prevents import errors if referenced)
+export const getBrandGradient = (_brand) => '';

@@ -1,85 +1,115 @@
 import express from 'express';
-import Groq from 'groq-sdk';
-import dotenv from 'dotenv';
+import { z } from 'zod';
+import { callWithFallback, streamWithFallback } from '../ai/groq.js';
+import { buildSystemPrompt } from '../ai/prompts.js';
 
-dotenv.config();
 const router = express.Router();
 
-const getGroqClient = () => {
-  const apiKey = process.env.GROQ_API_KEY;
-  if (!apiKey) {
-    throw new Error("GROQ_API_KEY is missing from environment variables.");
-  }
-  return new Groq({ apiKey });
-};
+const chatSchema = z.object({
+  message: z.string().min(1, 'Message is required').max(2000, 'Message cannot exceed 2000 characters'),
+  context: z.record(z.string(), z.any()).optional().nullable(),
+  history: z
+    .array(
+      z.object({
+        role: z.enum(['user', 'assistant']),
+        content: z.string(),
+      })
+    )
+    .max(8, 'History cannot exceed 8 messages')
+    .optional(),
+});
 
-// Candidate models in preference order (with fallbacks if a model is decommissioned or unavailable)
-const SUPPORTED_MODELS = [
-  process.env.GROQ_MODEL,
-  'openai/gpt-oss-120b',
-  'qwen/qwen3.8-27b',
-  'openai/gpt-oss-20b'
-].filter(Boolean);
-
+// Non-streaming chat endpoint (e.g. for Compare verdicts)
 router.post('/chat', async (req, res) => {
+  const parseResult = chatSchema.safeParse(req.body);
+  if (!parseResult.success) {
+    const errorMsg = parseResult.error.errors?.[0]?.message || 'Invalid request body';
+    return res.status(400).json({ error: errorMsg });
+  }
+
   try {
-    const { message, context } = req.body;
+    const { message, context, history = [] } = parseResult.data;
+    const systemPrompt = buildSystemPrompt(context);
+    const messages = [
+      { role: 'system', content: systemPrompt },
+      ...history,
+      { role: 'user', content: message },
+    ];
 
-    if (!message) {
-      return res.status(400).json({ error: "Message is required" });
-    }
-
-    const groq = getGroqClient();
-
-    // Highly engineered system prompt
-    let systemPrompt = `You are SpecPedia AI, an expert product specification assistant. 
-    1. Format all responses using clean Markdown. Use bolding for product names and key metrics. Use bullet points for lists.
-    2. If comparing, create a clear side-by-side breakdown, followed by a "### Final Verdict" section recommending which is better.
-    3. If asked about a product NOT in the provided context, use your general knowledge, but explicitly state: "Note: This product is not in the SpecPedia database. Specs are estimated from global data." Do not make up fake specs.`;
-    
-    if (context && context.name) {
-      systemPrompt += `\nThe user is currently viewing: ${context.name}. Database Specs: ${JSON.stringify(context.specs)}. Price: ₹${context.price}.`;
-    }
-
-    console.log(`Sending to Groq: "${message}"`);
-
-    // Try primary and fallback models to prevent downtime if one model is decommissioned or rate-limited
-    const modelsToTry = [...new Set(SUPPORTED_MODELS)];
-    let chatCompletion = null;
-    let lastError = null;
-
-    for (const model of modelsToTry) {
-      try {
-        chatCompletion = await groq.chat.completions.create({
-          messages: [
-            { role: "system", content: systemPrompt },
-            { role: "user", content: message }
-          ],
-          model,
-          temperature: 0.4,
-          max_tokens: 800,
-        });
-        console.log(`Groq response generated using model: ${model}`);
-        break;
-      } catch (err) {
-        console.warn(`Model ${model} failed: ${err.message}. Trying next candidate...`);
-        lastError = err;
-      }
-    }
-
-    if (!chatCompletion) {
-      throw lastError || new Error("No Groq model was able to respond.");
-    }
-
-    const aiResponse = chatCompletion.choices[0]?.message?.content || "I couldn't generate a response.";
-    res.json({ reply: aiResponse });
-
+    console.log(`Sending to Groq: "${message}" (history: ${history.length} items)`);
+    const reply = await callWithFallback(messages, {
+      onMeta: (meta) => {
+        res.locals.aiMeta = meta;
+      },
+    });
+    return res.json({ reply });
   } catch (error) {
-    console.error("=== GROQ API ERROR ===");
+    console.error('=== GROQ API ERROR ===');
     console.error(error.message);
     if (error.error) console.error(error.error);
-    res.status(500).json({ error: error.message || "Failed to fetch AI response" });
+    return res.status(500).json({ error: 'Failed to fetch AI response' });
   }
 });
+
+// Streaming handler supporting SSE
+const handleStream = async (req, res) => {
+  const parseResult = chatSchema.safeParse(req.body);
+  if (!parseResult.success) {
+    const errorMsg = parseResult.error.errors?.[0]?.message || 'Invalid request body';
+    return res.status(400).json({ error: errorMsg });
+  }
+
+  // Set standard Server-Sent Events headers
+  res.setHeader('Content-Type', 'text/event-stream');
+  res.setHeader('Cache-Control', 'no-cache');
+  res.setHeader('Connection', 'keep-alive');
+  res.flushHeaders?.();
+
+  let clientAborted = false;
+  req.on('close', () => {
+    clientAborted = true;
+  });
+
+  try {
+    const { message, context, history = [] } = parseResult.data;
+    const systemPrompt = buildSystemPrompt(context);
+    const messages = [
+      { role: 'system', content: systemPrompt },
+      ...history,
+      { role: 'user', content: message },
+    ];
+
+    console.log(`Streaming from Groq: "${message}" (history: ${history.length} items)`);
+    const { stream, model } = await streamWithFallback(messages);
+    res.locals.aiMeta = { model, approxTokens: 0 };
+    console.log(`[Stream Active] Delivering tokens from model: ${model}`);
+
+    for await (const chunk of stream) {
+      if (clientAborted) {
+        console.log('Client closed connection; breaking stream.');
+        break;
+      }
+      const token = chunk.choices[0]?.delta?.content ?? '';
+      res.locals.aiMeta.approxTokens += 1;
+      res.write(`data: ${JSON.stringify({ token })}\n\n`);
+    }
+
+    if (!clientAborted) {
+      res.write('data: [DONE]\n\n');
+      res.end();
+    }
+  } catch (error) {
+    console.error('=== STREAMING GROQ API ERROR ===');
+    console.error(error.message);
+    if (!res.headersSent) {
+      return res.status(500).json({ error: 'Failed to initialize stream' });
+    }
+    res.write(`data: ${JSON.stringify({ error: 'stream_failed' })}\n\n`);
+    res.end();
+  }
+};
+
+router.post('/stream', handleStream);
+router.post('/chat/stream', handleStream);
 
 export default router;

@@ -1,0 +1,1702 @@
+[
+  {
+    "name": "OnePlus Nord 3",
+    "brand": "OnePlus",
+    "price": 28999,
+    "description": "Older mid-range king.",
+    "specs": {
+      "chip": "Dimensity 9000",
+      "battery": "5000 mAh",
+      "display": "6.74-inch AMOLED"
+    },
+    "currency": "INR",
+    "slug": "oneplus-nord-3",
+    "category_id": 1,
+    "status": "active",
+    "source_url": null,
+    "last_verified_at": "2026-09-11T14:31:46.086Z"
+  },
+  {
+    "name": "Xiaomi 15 Pro",
+    "brand": "Xiaomi",
+    "price": 74999,
+    "description": "Leica optics with variable aperture and 90W charging.",
+    "specs": {
+      "chip": "Snapdragon 8 Elite",
+      "battery": "5400 mAh",
+      "display": "6.73-inch AMOLED"
+    },
+    "currency": "INR",
+    "slug": "xiaomi-15-pro",
+    "category_id": 1,
+    "status": "active",
+    "source_url": null,
+    "last_verified_at": "2026-09-11T14:31:46.086Z"
+  },
+  {
+    "name": "Xiaomi 14",
+    "brand": "Xiaomi",
+    "price": 54999,
+    "description": "Compact flagship with Leica cameras.",
+    "specs": {
+      "chip": "Snapdragon 8 Gen 3",
+      "battery": "4610 mAh",
+      "display": "6.36-inch AMOLED"
+    },
+    "currency": "INR",
+    "slug": "xiaomi-14",
+    "category_id": 1,
+    "status": "active",
+    "source_url": null,
+    "last_verified_at": "2026-09-11T14:31:46.086Z"
+  },
+  {
+    "name": "Xiaomi 14 Ultra",
+    "brand": "Xiaomi",
+    "price": 89999,
+    "description": "Pro camera beast with 1-inch sensor.",
+    "specs": {
+      "chip": "Snapdragon 8 Gen 3",
+      "battery": "5300 mAh",
+      "display": "6.73-inch AMOLED"
+    },
+    "currency": "INR",
+    "slug": "xiaomi-14-ultra",
+    "category_id": 1,
+    "status": "active",
+    "source_url": null,
+    "last_verified_at": "2026-09-11T14:31:46.086Z"
+  },
+  {
+    "name": "Xiaomi 14 CIVI",
+    "brand": "Xiaomi",
+    "price": 39999,
+    "description": "Camera-centric phone with Leica lenses.",
+    "specs": {
+      "chip": "Snapdragon 8s Gen 3",
+      "battery": "4700 mAh",
+      "display": "6.55-inch AMOLED"
+    },
+    "currency": "INR",
+    "slug": "xiaomi-14-civi",
+    "category_id": 1,
+    "status": "active",
+    "source_url": null,
+    "last_verified_at": "2026-09-11T14:31:46.086Z"
+  },
+  {
+    "name": "Redmi Note 13 Pro+",
+    "brand": "Xiaomi",
+    "price": 31999,
+    "description": "200MP camera and 120W charging in mid-range.",
+    "specs": {
+      "chip": "Dimensity 7200 Ultra",
+      "battery": "5000 mAh",
+      "display": "6.67-inch AMOLED"
+    },
+    "currency": "INR",
+    "slug": "redmi-note-13-pro",
+    "category_id": 1,
+    "status": "active",
+    "source_url": null,
+    "last_verified_at": "2026-09-11T14:31:46.086Z"
+  },
+  {
+    "name": "Redmi Note 13 Pro",
+    "brand": "Xiaomi",
+    "price": 25999,
+    "description": "Mid-range king with 200MP camera.",
+    "specs": {
+      "chip": "Snapdragon 7s Gen 2",
+      "battery": "5100 mAh",
+      "display": "6.67-inch AMOLED"
+    },
+    "currency": "INR",
+    "slug": "redmi-note-13-pro",
+    "category_id": 1,
+    "status": "active",
+    "source_url": null,
+    "last_verified_at": "2026-09-11T14:31:46.086Z"
+  },
+  {
+    "name": "Redmi Note 13",
+    "brand": "Xiaomi",
+    "price": 16999,
+    "description": "Budget mid-range with AMOLED.",
+    "specs": {
+      "chip": "Dimensity 6080",
+      "battery": "5000 mAh",
+      "display": "6.67-inch AMOLED"
+    },
+    "currency": "INR",
+    "slug": "redmi-note-13",
+    "category_id": 1,
+    "status": "active",
+    "source_url": null,
+    "last_verified_at": "2026-09-11T14:31:46.086Z"
+  },
+  {
+    "name": "Poco F6 Pro",
+    "brand": "Xiaomi",
+    "price": 34999,
+    "description": "Performance beast with Snapdragon 8 Gen 2.",
+    "specs": {
+      "chip": "Snapdragon 8 Gen 2",
+      "battery": "5000 mAh",
+      "display": "6.67-inch AMOLED"
+    },
+    "currency": "INR",
+    "slug": "poco-f6-pro",
+    "category_id": 1,
+    "status": "active",
+    "source_url": null,
+    "last_verified_at": "2026-09-11T14:31:46.086Z"
+  },
+  {
+    "name": "Poco X6 Pro",
+    "brand": "Xiaomi",
+    "price": 23999,
+    "description": "Budget gaming with Dimensity 8300.",
+    "specs": {
+      "chip": "Dimensity 8300",
+      "battery": "5000 mAh",
+      "display": "6.67-inch AMOLED"
+    },
+    "currency": "INR",
+    "slug": "poco-x6-pro",
+    "category_id": 1,
+    "status": "active",
+    "source_url": null,
+    "last_verified_at": "2026-09-11T14:31:46.086Z"
+  },
+  {
+    "name": "Poco M6 Pro",
+    "brand": "Xiaomi",
+    "price": 13999,
+    "description": "Entry level with AMOLED display.",
+    "specs": {
+      "chip": "Dimensity 6100+",
+      "battery": "5000 mAh",
+      "display": "6.79-inch AMOLED"
+    },
+    "currency": "INR",
+    "slug": "poco-m6-pro",
+    "category_id": 1,
+    "status": "active",
+    "source_url": null,
+    "last_verified_at": "2026-09-11T14:31:46.086Z"
+  },
+  {
+    "name": "Vivo X200 Pro",
+    "brand": "Vivo",
+    "price": 94999,
+    "description": "Zeiss optics with 200MP telephoto and Dimensity 9400.",
+    "specs": {
+      "chip": "Dimensity 9400",
+      "battery": "6000 mAh",
+      "display": "6.78-inch AMOLED"
+    },
+    "currency": "INR",
+    "slug": "vivo-x200-pro",
+    "category_id": 1,
+    "status": "active",
+    "source_url": null,
+    "last_verified_at": "2026-09-11T14:31:46.086Z"
+  },
+  {
+    "name": "Vivo X100 Pro",
+    "brand": "Vivo",
+    "price": 79999,
+    "description": "Last gen camera king with 1-inch sensor.",
+    "specs": {
+      "chip": "Dimensity 9300",
+      "battery": "5400 mAh",
+      "display": "6.78-inch AMOLED"
+    },
+    "currency": "INR",
+    "slug": "vivo-x100-pro",
+    "category_id": 1,
+    "status": "active",
+    "source_url": null,
+    "last_verified_at": "2026-09-11T14:31:46.086Z"
+  },
+  {
+    "name": "Vivo X100",
+    "brand": "Vivo",
+    "price": 63999,
+    "description": "Compact flagship with Zeiss.",
+    "specs": {
+      "chip": "Dimensity 9300",
+      "battery": "5000 mAh",
+      "display": "6.78-inch AMOLED"
+    },
+    "currency": "INR",
+    "slug": "vivo-x100",
+    "category_id": 1,
+    "status": "active",
+    "source_url": null,
+    "last_verified_at": "2026-09-11T14:31:46.086Z"
+  },
+  {
+    "name": "Vivo V40 Pro",
+    "brand": "Vivo",
+    "price": 49999,
+    "description": "Slim design with ZEISS portrait cameras.",
+    "specs": {
+      "chip": "Dimensity 9200+",
+      "battery": "5500 mAh",
+      "display": "6.78-inch AMOLED"
+    },
+    "currency": "INR",
+    "slug": "vivo-v40-pro",
+    "category_id": 1,
+    "status": "active",
+    "source_url": null,
+    "last_verified_at": "2026-09-11T14:31:46.086Z"
+  },
+  {
+    "name": "Vivo V40",
+    "brand": "Vivo",
+    "price": 34999,
+    "description": "Mid-range with 5500mAh battery and Aura light.",
+    "specs": {
+      "chip": "Snapdragon 7 Gen 3",
+      "battery": "5500 mAh",
+      "display": "6.78-inch AMOLED"
+    },
+    "currency": "INR",
+    "slug": "vivo-v40",
+    "category_id": 1,
+    "status": "active",
+    "source_url": null,
+    "last_verified_at": "2026-09-11T14:31:46.086Z"
+  },
+  {
+    "name": "Vivo V30 Pro",
+    "brand": "Vivo",
+    "price": 41999,
+    "description": "Older mid-range with Zeiss.",
+    "specs": {
+      "chip": "Dimensity 8200",
+      "battery": "5000 mAh",
+      "display": "6.78-inch AMOLED"
+    },
+    "currency": "INR",
+    "slug": "vivo-v30-pro",
+    "category_id": 1,
+    "status": "active",
+    "source_url": null,
+    "last_verified_at": "2026-09-11T14:31:46.086Z"
+  },
+  {
+    "name": "Vivo V30",
+    "brand": "Vivo",
+    "price": 33999,
+    "description": "Slim mid-range with Aura light.",
+    "specs": {
+      "chip": "Snapdragon 7 Gen 3",
+      "battery": "5000 mAh",
+      "display": "6.78-inch AMOLED"
+    },
+    "currency": "INR",
+    "slug": "vivo-v30",
+    "category_id": 1,
+    "status": "active",
+    "source_url": null,
+    "last_verified_at": "2026-09-11T14:31:46.086Z"
+  },
+  {
+    "name": "Vivo T3 Pro",
+    "brand": "Vivo",
+    "price": 24999,
+    "description": "Budget mid-range with curved display.",
+    "specs": {
+      "chip": "Snapdragon 7 Gen 2",
+      "battery": "5500 mAh",
+      "display": "6.77-inch AMOLED"
+    },
+    "currency": "INR",
+    "slug": "vivo-t3-pro",
+    "category_id": 1,
+    "status": "active",
+    "source_url": null,
+    "last_verified_at": "2026-09-11T14:31:46.086Z"
+  },
+  {
+    "name": "Vivo T3",
+    "brand": "Vivo",
+    "price": 19999,
+    "description": "Performance budget phone.",
+    "specs": {
+      "chip": "Dimensity 7200",
+      "battery": "5000 mAh",
+      "display": "6.67-inch AMOLED"
+    },
+    "currency": "INR",
+    "slug": "vivo-t3",
+    "category_id": 1,
+    "status": "active",
+    "source_url": null,
+    "last_verified_at": "2026-09-11T14:31:46.086Z"
+  },
+  {
+    "name": "Vivo Y200e",
+    "brand": "Vivo",
+    "price": 18999,
+    "description": "Entry level 5G phone.",
+    "specs": {
+      "chip": "Dimensity 6020",
+      "battery": "5000 mAh",
+      "display": "6.67-inch AMOLED"
+    },
+    "currency": "INR",
+    "slug": "vivo-y200e",
+    "category_id": 1,
+    "status": "active",
+    "source_url": null,
+    "last_verified_at": "2026-09-11T14:31:46.086Z"
+  },
+  {
+    "name": "iPhone 16 Pro Max",
+    "brand": "Apple",
+    "price": 144900,
+    "description": "Apple flagship with A18 Pro chip and 5x optical zoom.",
+    "specs": {
+      "chip": "A18 Pro",
+      "battery": "4685 mAh",
+      "display": "6.9-inch OLED"
+    },
+    "currency": "INR",
+    "slug": "iphone-16-pro-max",
+    "category_id": 1,
+    "status": "active",
+    "source_url": null,
+    "last_verified_at": "2026-09-11T14:31:46.086Z"
+  },
+  {
+    "name": "iPhone 16 Pro",
+    "brand": "Apple",
+    "price": 119900,
+    "description": "Compact titanium flagship with A18 Pro.",
+    "specs": {
+      "chip": "A18 Pro",
+      "battery": "3382 mAh",
+      "display": "6.3-inch OLED"
+    },
+    "currency": "INR",
+    "slug": "iphone-16-pro",
+    "category_id": 1,
+    "status": "active",
+    "source_url": null,
+    "last_verified_at": "2026-09-11T14:31:46.086Z"
+  },
+  {
+    "name": "iPhone 16 Plus",
+    "brand": "Apple",
+    "price": 89900,
+    "description": "Large screen flagship with excellent battery life.",
+    "specs": {
+      "chip": "A18",
+      "battery": "4473 mAh",
+      "display": "6.7-inch OLED"
+    },
+    "currency": "INR",
+    "slug": "iphone-16-plus",
+    "category_id": 1,
+    "status": "active",
+    "source_url": null,
+    "last_verified_at": "2026-09-11T14:31:46.086Z"
+  },
+  {
+    "name": "iPhone 16",
+    "brand": "Apple",
+    "price": 79900,
+    "description": "Standard flagship with A18 chip and camera control.",
+    "specs": {
+      "chip": "A18",
+      "battery": "3561 mAh",
+      "display": "6.1-inch OLED"
+    },
+    "currency": "INR",
+    "slug": "iphone-16",
+    "category_id": 1,
+    "status": "active",
+    "source_url": null,
+    "last_verified_at": "2026-09-11T14:31:46.086Z"
+  },
+  {
+    "name": "iPhone 15 Pro Max",
+    "brand": "Apple",
+    "price": 134900,
+    "description": "Last gen titanium flagship with A17 Pro.",
+    "specs": {
+      "chip": "A17 Pro",
+      "battery": "4422 mAh",
+      "display": "6.7-inch OLED"
+    },
+    "currency": "INR",
+    "slug": "iphone-15-pro-max",
+    "category_id": 1,
+    "status": "active",
+    "source_url": null,
+    "last_verified_at": "2026-09-11T14:31:46.086Z"
+  },
+  {
+    "name": "iPhone 15 Pro",
+    "brand": "Apple",
+    "price": 119900,
+    "description": "Compact titanium flagship with A17 Pro.",
+    "specs": {
+      "chip": "A17 Pro",
+      "battery": "3274 mAh",
+      "display": "6.1-inch OLED"
+    },
+    "currency": "INR",
+    "slug": "iphone-15-pro",
+    "category_id": 1,
+    "status": "active",
+    "source_url": null,
+    "last_verified_at": "2026-09-11T14:31:46.086Z"
+  },
+  {
+    "name": "iPhone 15 Plus",
+    "brand": "Apple",
+    "price": 79900,
+    "description": "Large screen standard flagship.",
+    "specs": {
+      "chip": "A16 Bionic",
+      "battery": "4383 mAh",
+      "display": "6.7-inch OLED"
+    },
+    "currency": "INR",
+    "slug": "iphone-15-plus",
+    "category_id": 1,
+    "status": "active",
+    "source_url": null,
+    "last_verified_at": "2026-09-11T14:31:46.086Z"
+  },
+  {
+    "name": "iPhone 15",
+    "brand": "Apple",
+    "price": 69900,
+    "description": "Standard flagship with dynamic island.",
+    "specs": {
+      "chip": "A16 Bionic",
+      "battery": "3349 mAh",
+      "display": "6.1-inch OLED"
+    },
+    "currency": "INR",
+    "slug": "iphone-15",
+    "category_id": 1,
+    "status": "active",
+    "source_url": null,
+    "last_verified_at": "2026-09-11T14:31:46.086Z"
+  },
+  {
+    "name": "iPhone 14 Pro Max",
+    "brand": "Apple",
+    "price": 119900,
+    "description": "Older flagship with dynamic island and 48MP camera.",
+    "specs": {
+      "chip": "A16 Bionic",
+      "battery": "4323 mAh",
+      "display": "6.7-inch OLED"
+    },
+    "currency": "INR",
+    "slug": "iphone-14-pro-max",
+    "category_id": 1,
+    "status": "active",
+    "source_url": null,
+    "last_verified_at": "2026-09-11T14:31:46.086Z"
+  },
+  {
+    "name": "iPhone 14",
+    "brand": "Apple",
+    "price": 59900,
+    "description": "Standard older flagship.",
+    "specs": {
+      "chip": "A15 Bionic",
+      "battery": "3279 mAh",
+      "display": "6.1-inch OLED"
+    },
+    "currency": "INR",
+    "slug": "iphone-14",
+    "category_id": 1,
+    "status": "active",
+    "source_url": null,
+    "last_verified_at": "2026-09-11T14:31:46.086Z"
+  },
+  {
+    "name": "Galaxy S25 Ultra",
+    "brand": "Samsung",
+    "price": 129999,
+    "description": "Android powerhouse with S Pen and 200MP camera.",
+    "specs": {
+      "chip": "Snapdragon 8 Elite",
+      "battery": "5000 mAh",
+      "display": "6.8-inch AMOLED"
+    },
+    "currency": "INR",
+    "slug": "galaxy-s25-ultra",
+    "category_id": 1,
+    "status": "active",
+    "source_url": null,
+    "last_verified_at": "2026-09-11T14:31:46.086Z"
+  },
+  {
+    "name": "Galaxy S25+",
+    "brand": "Samsung",
+    "price": 104999,
+    "description": "Premium flagship with Snapdragon 8 Elite.",
+    "specs": {
+      "chip": "Snapdragon 8 Elite",
+      "battery": "4900 mAh",
+      "display": "6.7-inch AMOLED"
+    },
+    "currency": "INR",
+    "slug": "galaxy-s25",
+    "category_id": 1,
+    "status": "active",
+    "source_url": null,
+    "last_verified_at": "2026-09-11T14:31:46.086Z"
+  },
+  {
+    "name": "Galaxy S25",
+    "brand": "Samsung",
+    "price": 84999,
+    "description": "Compact flagship with top tier specs.",
+    "specs": {
+      "chip": "Snapdragon 8 Elite",
+      "battery": "4000 mAh",
+      "display": "6.2-inch AMOLED"
+    },
+    "currency": "INR",
+    "slug": "galaxy-s25",
+    "category_id": 1,
+    "status": "active",
+    "source_url": null,
+    "last_verified_at": "2026-09-11T14:31:46.086Z"
+  },
+  {
+    "name": "Galaxy Z Fold 6",
+    "brand": "Samsung",
+    "price": 164999,
+    "description": "Premium foldable with dual screens and Galaxy AI.",
+    "specs": {
+      "chip": "Snapdragon 8 Gen 3",
+      "battery": "4400 mAh",
+      "display": "7.6-inch AMOLED"
+    },
+    "currency": "INR",
+    "slug": "galaxy-z-fold-6",
+    "category_id": 1,
+    "status": "active",
+    "source_url": null,
+    "last_verified_at": "2026-09-11T14:31:46.086Z"
+  },
+  {
+    "name": "Galaxy Z Flip 6",
+    "brand": "Samsung",
+    "price": 99999,
+    "description": "Compact foldable with dual screen and AI.",
+    "specs": {
+      "chip": "Snapdragon 8 Gen 3",
+      "battery": "4000 mAh",
+      "display": "6.7-inch AMOLED"
+    },
+    "currency": "INR",
+    "slug": "galaxy-z-flip-6",
+    "category_id": 1,
+    "status": "active",
+    "source_url": null,
+    "last_verified_at": "2026-09-11T14:31:46.086Z"
+  },
+  {
+    "name": "Galaxy S24 Ultra",
+    "brand": "Samsung",
+    "price": 109999,
+    "description": "Last gen flagship with S Pen and AI.",
+    "specs": {
+      "chip": "Snapdragon 8 Gen 3",
+      "battery": "5000 mAh",
+      "display": "6.8-inch AMOLED"
+    },
+    "currency": "INR",
+    "slug": "galaxy-s24-ultra",
+    "category_id": 1,
+    "status": "active",
+    "source_url": null,
+    "last_verified_at": "2026-09-11T14:31:46.086Z"
+  },
+  {
+    "name": "Galaxy S24+",
+    "brand": "Samsung",
+    "price": 84999,
+    "description": "Last gen premium flagship.",
+    "specs": {
+      "chip": "Exynos 2400",
+      "battery": "4900 mAh",
+      "display": "6.7-inch AMOLED"
+    },
+    "currency": "INR",
+    "slug": "galaxy-s24",
+    "category_id": 1,
+    "status": "active",
+    "source_url": null,
+    "last_verified_at": "2026-09-11T14:31:46.086Z"
+  },
+  {
+    "name": "Galaxy S24",
+    "brand": "Samsung",
+    "price": 69999,
+    "description": "Last gen compact flagship.",
+    "specs": {
+      "chip": "Exynos 2400",
+      "battery": "4000 mAh",
+      "display": "6.2-inch AMOLED"
+    },
+    "currency": "INR",
+    "slug": "galaxy-s24",
+    "category_id": 1,
+    "status": "active",
+    "source_url": null,
+    "last_verified_at": "2026-09-11T14:31:46.086Z"
+  },
+  {
+    "name": "Galaxy A55",
+    "brand": "Samsung",
+    "price": 39999,
+    "description": "Mid-range king with premium build and Exynos 1480.",
+    "specs": {
+      "chip": "Exynos 1480",
+      "battery": "5000 mAh",
+      "display": "6.6-inch AMOLED"
+    },
+    "currency": "INR",
+    "slug": "galaxy-a55",
+    "category_id": 1,
+    "status": "active",
+    "source_url": null,
+    "last_verified_at": "2026-09-11T14:31:46.086Z"
+  },
+  {
+    "name": "Galaxy M55",
+    "brand": "Samsung",
+    "price": 26999,
+    "description": "Battery focused mid-range with 45W charging.",
+    "specs": {
+      "chip": "Snapdragon 7 Gen 1",
+      "battery": "5000 mAh",
+      "display": "6.7-inch AMOLED"
+    },
+    "currency": "INR",
+    "slug": "galaxy-m55",
+    "category_id": 1,
+    "status": "active",
+    "source_url": null,
+    "last_verified_at": "2026-09-11T14:31:46.086Z"
+  },
+  {
+    "name": "Pixel 9 Pro XL",
+    "brand": "Google",
+    "price": 124999,
+    "description": "Pure Android with Tensor G4 and exceptional AI.",
+    "specs": {
+      "chip": "Tensor G4",
+      "battery": "5060 mAh",
+      "display": "6.8-inch OLED"
+    },
+    "currency": "INR",
+    "slug": "pixel-9-pro-xl",
+    "category_id": 1,
+    "status": "active",
+    "source_url": null,
+    "last_verified_at": "2026-09-11T14:31:46.086Z"
+  },
+  {
+    "name": "Pixel 9 Pro",
+    "brand": "Google",
+    "price": 109999,
+    "description": "Compact flagship with telephoto lens.",
+    "specs": {
+      "chip": "Tensor G4",
+      "battery": "4700 mAh",
+      "display": "6.3-inch OLED"
+    },
+    "currency": "INR",
+    "slug": "pixel-9-pro",
+    "category_id": 1,
+    "status": "active",
+    "source_url": null,
+    "last_verified_at": "2026-09-11T14:31:46.086Z"
+  },
+  {
+    "name": "Pixel 9",
+    "brand": "Google",
+    "price": 79999,
+    "description": "Base model with Tensor G4 and clean UI.",
+    "specs": {
+      "chip": "Tensor G4",
+      "battery": "4700 mAh",
+      "display": "6.3-inch OLED"
+    },
+    "currency": "INR",
+    "slug": "pixel-9",
+    "category_id": 1,
+    "status": "active",
+    "source_url": null,
+    "last_verified_at": "2026-09-11T14:31:46.086Z"
+  },
+  {
+    "name": "Pixel 9 Pro Fold",
+    "brand": "Google",
+    "price": 172999,
+    "description": "Premium foldable with Tensor G4 and AI.",
+    "specs": {
+      "chip": "Tensor G4",
+      "battery": "4650 mAh",
+      "display": "8.0-inch OLED"
+    },
+    "currency": "INR",
+    "slug": "pixel-9-pro-fold",
+    "category_id": 1,
+    "status": "active",
+    "source_url": null,
+    "last_verified_at": "2026-09-11T14:31:46.086Z"
+  },
+  {
+    "name": "Pixel 8a",
+    "brand": "Google",
+    "price": 52999,
+    "description": "Budget AI phone with 120Hz display.",
+    "specs": {
+      "chip": "Tensor G3",
+      "battery": "4492 mAh",
+      "display": "6.1-inch OLED"
+    },
+    "currency": "INR",
+    "slug": "pixel-8a",
+    "category_id": 1,
+    "status": "active",
+    "source_url": null,
+    "last_verified_at": "2026-09-11T14:31:46.086Z"
+  },
+  {
+    "name": "Pixel 8 Pro",
+    "brand": "Google",
+    "price": 84999,
+    "description": "Last gen flagship with temperature sensor.",
+    "specs": {
+      "chip": "Tensor G3",
+      "battery": "5050 mAh",
+      "display": "6.7-inch OLED"
+    },
+    "currency": "INR",
+    "slug": "pixel-8-pro",
+    "category_id": 1,
+    "status": "active",
+    "source_url": null,
+    "last_verified_at": "2026-09-11T14:31:46.086Z"
+  },
+  {
+    "name": "Pixel 8",
+    "brand": "Google",
+    "price": 61999,
+    "description": "Last gen compact flagship.",
+    "specs": {
+      "chip": "Tensor G3",
+      "battery": "4575 mAh",
+      "display": "6.2-inch OLED"
+    },
+    "currency": "INR",
+    "slug": "pixel-8",
+    "category_id": 1,
+    "status": "active",
+    "source_url": null,
+    "last_verified_at": "2026-09-11T14:31:46.086Z"
+  },
+  {
+    "name": "Pixel 7a",
+    "brand": "Google",
+    "price": 39999,
+    "description": "Older budget AI phone.",
+    "specs": {
+      "chip": "Tensor G2",
+      "battery": "4385 mAh",
+      "display": "6.1-inch OLED"
+    },
+    "currency": "INR",
+    "slug": "pixel-7a",
+    "category_id": 1,
+    "status": "active",
+    "source_url": null,
+    "last_verified_at": "2026-09-11T14:31:46.086Z"
+  },
+  {
+    "name": "Pixel 7 Pro",
+    "brand": "Google",
+    "price": 64999,
+    "description": "Older flagship with 5x optical zoom.",
+    "specs": {
+      "chip": "Tensor G2",
+      "battery": "5000 mAh",
+      "display": "6.7-inch OLED"
+    },
+    "currency": "INR",
+    "slug": "pixel-7-pro",
+    "category_id": 1,
+    "status": "active",
+    "source_url": null,
+    "last_verified_at": "2026-09-11T14:31:46.086Z"
+  },
+  {
+    "name": "Pixel 7",
+    "brand": "Google",
+    "price": 49999,
+    "description": "Older compact flagship.",
+    "specs": {
+      "chip": "Tensor G2",
+      "battery": "4355 mAh",
+      "display": "6.3-inch OLED"
+    },
+    "currency": "INR",
+    "slug": "pixel-7",
+    "category_id": 1,
+    "status": "active",
+    "source_url": null,
+    "last_verified_at": "2026-09-11T14:31:46.086Z"
+  },
+  {
+    "name": "OnePlus 13",
+    "brand": "OnePlus",
+    "price": 69999,
+    "description": "Flagship killer with Hasselblad and 6000mAh battery.",
+    "specs": {
+      "chip": "Snapdragon 8 Elite",
+      "battery": "6000 mAh",
+      "display": "6.82-inch AMOLED"
+    },
+    "currency": "INR",
+    "slug": "oneplus-13",
+    "category_id": 1,
+    "status": "active",
+    "source_url": null,
+    "last_verified_at": "2026-09-11T14:31:46.086Z"
+  },
+  {
+    "name": "OnePlus 12",
+    "brand": "OnePlus",
+    "price": 59999,
+    "description": "Last gen flagship with 100W fast charging.",
+    "specs": {
+      "chip": "Snapdragon 8 Gen 3",
+      "battery": "5400 mAh",
+      "display": "6.82-inch AMOLED"
+    },
+    "currency": "INR",
+    "slug": "oneplus-12",
+    "category_id": 1,
+    "status": "active",
+    "source_url": null,
+    "last_verified_at": "2026-09-11T14:31:46.086Z"
+  },
+  {
+    "name": "OnePlus 12R",
+    "brand": "OnePlus",
+    "price": 39999,
+    "description": "Premium mid-range with 5500mAh battery.",
+    "specs": {
+      "chip": "Snapdragon 8 Gen 2",
+      "battery": "5500 mAh",
+      "display": "6.78-inch AMOLED"
+    },
+    "currency": "INR",
+    "slug": "oneplus-12r",
+    "category_id": 1,
+    "status": "active",
+    "source_url": null,
+    "last_verified_at": "2026-09-11T14:31:46.086Z"
+  },
+  {
+    "name": "OnePlus Open",
+    "brand": "OnePlus",
+    "price": 99999,
+    "description": "Premium foldable with Hasselblad optics.",
+    "specs": {
+      "chip": "Snapdragon 8 Gen 2",
+      "battery": "4805 mAh",
+      "display": "7.82-inch AMOLED"
+    },
+    "currency": "INR",
+    "slug": "oneplus-open",
+    "category_id": 1,
+    "status": "active",
+    "source_url": null,
+    "last_verified_at": "2026-09-11T14:31:46.086Z"
+  },
+  {
+    "name": "OnePlus Nord 4",
+    "brand": "OnePlus",
+    "price": 29999,
+    "description": "Metal unibody mid-range with 100W charging.",
+    "specs": {
+      "chip": "Snapdragon 7+ Gen 3",
+      "battery": "5500 mAh",
+      "display": "6.74-inch AMOLED"
+    },
+    "currency": "INR",
+    "slug": "oneplus-nord-4",
+    "category_id": 1,
+    "status": "active",
+    "source_url": null,
+    "last_verified_at": "2026-09-11T14:31:46.086Z"
+  },
+  {
+    "name": "OnePlus Nord CE 4",
+    "brand": "OnePlus",
+    "price": 24999,
+    "description": "Budget mid-range with 100W charging.",
+    "specs": {
+      "chip": "Snapdragon 7 Gen 3",
+      "battery": "5500 mAh",
+      "display": "6.67-inch AMOLED"
+    },
+    "currency": "INR",
+    "slug": "oneplus-nord-ce-4",
+    "category_id": 1,
+    "status": "active",
+    "source_url": null,
+    "last_verified_at": "2026-09-11T14:31:46.086Z"
+  },
+  {
+    "name": "OnePlus 11R",
+    "brand": "OnePlus",
+    "price": 39999,
+    "description": "Older premium mid-range.",
+    "specs": {
+      "chip": "Snapdragon 8+ Gen 1",
+      "battery": "5000 mAh",
+      "display": "6.74-inch AMOLED"
+    },
+    "currency": "INR",
+    "slug": "oneplus-11r",
+    "category_id": 1,
+    "status": "active",
+    "source_url": null,
+    "last_verified_at": "2026-09-11T14:31:46.086Z"
+  },
+  {
+    "name": "OnePlus 11",
+    "brand": "OnePlus",
+    "price": 56999,
+    "description": "Older flagship with Hasselblad.",
+    "specs": {
+      "chip": "Snapdragon 8 Gen 2",
+      "battery": "5000 mAh",
+      "display": "6.7-inch AMOLED"
+    },
+    "currency": "INR",
+    "slug": "oneplus-11",
+    "category_id": 1,
+    "status": "active",
+    "source_url": null,
+    "last_verified_at": "2026-09-11T14:31:46.086Z"
+  },
+  {
+    "name": "OnePlus 10 Pro",
+    "brand": "OnePlus",
+    "price": 44999,
+    "description": "Older flagship with 80W charging.",
+    "specs": {
+      "chip": "Snapdragon 8 Gen 1",
+      "battery": "5000 mAh",
+      "display": "6.7-inch AMOLED"
+    },
+    "currency": "INR",
+    "slug": "oneplus-10-pro",
+    "category_id": 1,
+    "status": "active",
+    "source_url": null,
+    "last_verified_at": "2026-09-11T14:31:46.086Z"
+  },
+  {
+    "name": "Oppo Find X8 Pro",
+    "brand": "Oppo",
+    "price": 99999,
+    "description": "Hasselblad photography with dual periscope lenses.",
+    "specs": {
+      "chip": "Dimensity 9400",
+      "battery": "5630 mAh",
+      "display": "6.78-inch AMOLED"
+    },
+    "currency": "INR",
+    "slug": "oppo-find-x8-pro",
+    "category_id": 1,
+    "status": "active",
+    "source_url": null,
+    "last_verified_at": "2026-09-11T14:31:46.086Z"
+  },
+  {
+    "name": "Oppo Find X8",
+    "brand": "Oppo",
+    "price": 79999,
+    "description": "Compact flagship with Hasselblad and Dimensity 9400.",
+    "specs": {
+      "chip": "Dimensity 9400",
+      "battery": "5630 mAh",
+      "display": "6.59-inch AMOLED"
+    },
+    "currency": "INR",
+    "slug": "oppo-find-x8",
+    "category_id": 1,
+    "status": "active",
+    "source_url": null,
+    "last_verified_at": "2026-09-11T14:31:46.086Z"
+  },
+  {
+    "name": "Oppo Find N3",
+    "brand": "Oppo",
+    "price": 114999,
+    "description": "Premium foldable with Hasselblad.",
+    "specs": {
+      "chip": "Snapdragon 8 Gen 2",
+      "battery": "4805 mAh",
+      "display": "7.82-inch AMOLED"
+    },
+    "currency": "INR",
+    "slug": "oppo-find-n3",
+    "category_id": 1,
+    "status": "active",
+    "source_url": null,
+    "last_verified_at": "2026-09-11T14:31:46.086Z"
+  },
+  {
+    "name": "Oppo Reno 12 Pro",
+    "brand": "Oppo",
+    "price": 39999,
+    "description": "AI-focused phone with sleek design.",
+    "specs": {
+      "chip": "Dimensity 7300",
+      "battery": "5000 mAh",
+      "display": "6.7-inch AMOLED"
+    },
+    "currency": "INR",
+    "slug": "oppo-reno-12-pro",
+    "category_id": 1,
+    "status": "active",
+    "source_url": null,
+    "last_verified_at": "2026-09-11T14:31:46.086Z"
+  },
+  {
+    "name": "Oppo Reno 12",
+    "brand": "Oppo",
+    "price": 32999,
+    "description": "Mid-range AI phone with 80W charging.",
+    "specs": {
+      "chip": "Dimensity 7300",
+      "battery": "5000 mAh",
+      "display": "6.7-inch AMOLED"
+    },
+    "currency": "INR",
+    "slug": "oppo-reno-12",
+    "category_id": 1,
+    "status": "active",
+    "source_url": null,
+    "last_verified_at": "2026-09-11T14:31:46.086Z"
+  },
+  {
+    "name": "Oppo Reno 11 Pro",
+    "brand": "Oppo",
+    "price": 35999,
+    "description": "Older portrait phone.",
+    "specs": {
+      "chip": "Snapdragon 8+ Gen 1",
+      "battery": "4600 mAh",
+      "display": "6.7-inch AMOLED"
+    },
+    "currency": "INR",
+    "slug": "oppo-reno-11-pro",
+    "category_id": 1,
+    "status": "active",
+    "source_url": null,
+    "last_verified_at": "2026-09-11T14:31:46.086Z"
+  },
+  {
+    "name": "Oppo Reno 11",
+    "brand": "Oppo",
+    "price": 27999,
+    "description": "Mid-range portrait phone.",
+    "specs": {
+      "chip": "Dimensity 7050",
+      "battery": "4800 mAh",
+      "display": "6.7-inch AMOLED"
+    },
+    "currency": "INR",
+    "slug": "oppo-reno-11",
+    "category_id": 1,
+    "status": "active",
+    "source_url": null,
+    "last_verified_at": "2026-09-11T14:31:46.086Z"
+  },
+  {
+    "name": "Oppo F27 Pro+",
+    "brand": "Oppo",
+    "price": 21999,
+    "description": "Rugged design with Super AMOLED display.",
+    "specs": {
+      "chip": "Dimensity 7050",
+      "battery": "5000 mAh",
+      "display": "6.7-inch AMOLED"
+    },
+    "currency": "INR",
+    "slug": "oppo-f27-pro",
+    "category_id": 1,
+    "status": "active",
+    "source_url": null,
+    "last_verified_at": "2026-09-11T14:31:46.086Z"
+  },
+  {
+    "name": "Oppo F27 Pro",
+    "brand": "Oppo",
+    "price": 18999,
+    "description": "Budget rugged phone.",
+    "specs": {
+      "chip": "Dimensity 6020",
+      "battery": "5000 mAh",
+      "display": "6.67-inch AMOLED"
+    },
+    "currency": "INR",
+    "slug": "oppo-f27-pro",
+    "category_id": 1,
+    "status": "active",
+    "source_url": null,
+    "last_verified_at": "2026-09-11T14:31:46.086Z"
+  },
+  {
+    "name": "Oppo A79",
+    "brand": "Oppo",
+    "price": 16999,
+    "description": "Entry level 5G phone.",
+    "specs": {
+      "chip": "Dimensity 6020",
+      "battery": "5000 mAh",
+      "display": "6.72-inch LCD"
+    },
+    "currency": "INR",
+    "slug": "oppo-a79",
+    "category_id": 1,
+    "status": "active",
+    "source_url": null,
+    "last_verified_at": "2026-09-11T14:31:46.086Z"
+  },
+  {
+    "name": "Nothing Phone 3",
+    "brand": "Nothing",
+    "price": 64999,
+    "description": "Transparent design with Glyph interface 2.0.",
+    "specs": {
+      "chip": "Snapdragon 8s Gen 3",
+      "battery": "5000 mAh",
+      "display": "6.7-inch OLED"
+    },
+    "currency": "INR",
+    "slug": "nothing-phone-3",
+    "category_id": 1,
+    "status": "active",
+    "source_url": null,
+    "last_verified_at": "2026-09-11T14:31:46.086Z"
+  },
+  {
+    "name": "Nothing Phone 2a",
+    "brand": "Nothing",
+    "price": 23999,
+    "description": "Budget-friendly with dual 50MP cameras.",
+    "specs": {
+      "chip": "Dimensity 7200 Pro",
+      "battery": "5000 mAh",
+      "display": "6.7-inch AMOLED"
+    },
+    "currency": "INR",
+    "slug": "nothing-phone-2a",
+    "category_id": 1,
+    "status": "active",
+    "source_url": null,
+    "last_verified_at": "2026-09-11T14:31:46.086Z"
+  },
+  {
+    "name": "Nothing Phone 2",
+    "brand": "Nothing",
+    "price": 39999,
+    "description": "Premium flagship with Snapdragon 8+ Gen 1.",
+    "specs": {
+      "chip": "Snapdragon 8+ Gen 1",
+      "battery": "4700 mAh",
+      "display": "6.7-inch OLED"
+    },
+    "currency": "INR",
+    "slug": "nothing-phone-2",
+    "category_id": 1,
+    "status": "active",
+    "source_url": null,
+    "last_verified_at": "2026-09-11T14:31:46.086Z"
+  },
+  {
+    "name": "Nothing Phone 1",
+    "brand": "Nothing",
+    "price": 29999,
+    "description": "The original transparent phone.",
+    "specs": {
+      "chip": "Snapdragon 778G+",
+      "battery": "4500 mAh",
+      "display": "6.55-inch OLED"
+    },
+    "currency": "INR",
+    "slug": "nothing-phone-1",
+    "category_id": 1,
+    "status": "active",
+    "source_url": null,
+    "last_verified_at": "2026-09-11T14:31:46.086Z"
+  },
+  {
+    "name": "Nothing CMF Phone 1",
+    "brand": "Nothing",
+    "price": 15999,
+    "description": "Modular design with interchangeable back plates.",
+    "specs": {
+      "chip": "Dimensity 7300",
+      "battery": "5000 mAh",
+      "display": "6.67-inch AMOLED"
+    },
+    "currency": "INR",
+    "slug": "nothing-cmf-phone-1",
+    "category_id": 1,
+    "status": "active",
+    "source_url": null,
+    "last_verified_at": "2026-09-11T14:31:46.086Z"
+  },
+  {
+    "name": "Nothing Phone 2a Plus",
+    "brand": "Nothing",
+    "price": 27999,
+    "description": "Upgraded version of 2a with better specs.",
+    "specs": {
+      "chip": "Dimensity 7350 Pro",
+      "battery": "5000 mAh",
+      "display": "6.7-inch AMOLED"
+    },
+    "currency": "INR",
+    "slug": "nothing-phone-2a-plus",
+    "category_id": 1,
+    "status": "active",
+    "source_url": null,
+    "last_verified_at": "2026-09-11T14:31:46.086Z"
+  },
+  {
+    "name": "Nothing Phone 1 Lite",
+    "brand": "Nothing",
+    "price": 19999,
+    "description": "Rumored budget variant.",
+    "specs": {
+      "chip": "Snapdragon 695",
+      "battery": "4500 mAh",
+      "display": "6.5-inch LCD"
+    },
+    "currency": "INR",
+    "slug": "nothing-phone-1-lite",
+    "category_id": 1,
+    "status": "active",
+    "source_url": null,
+    "last_verified_at": "2026-09-11T14:31:46.086Z"
+  },
+  {
+    "name": "Nothing Phone 2a Special Edition",
+    "brand": "Nothing",
+    "price": 25999,
+    "description": "Special color variant.",
+    "specs": {
+      "chip": "Dimensity 7200 Pro",
+      "battery": "5000 mAh",
+      "display": "6.7-inch AMOLED"
+    },
+    "currency": "INR",
+    "slug": "nothing-phone-2a-special-edition",
+    "category_id": 1,
+    "status": "active",
+    "source_url": null,
+    "last_verified_at": "2026-09-11T14:31:46.086Z"
+  },
+  {
+    "name": "Nothing Phone 3 Lite",
+    "brand": "Nothing",
+    "price": 39999,
+    "description": "Rumored cheaper Phone 3.",
+    "specs": {
+      "chip": "Snapdragon 7 Gen 3",
+      "battery": "4800 mAh",
+      "display": "6.7-inch OLED"
+    },
+    "currency": "INR",
+    "slug": "nothing-phone-3-lite",
+    "category_id": 1,
+    "status": "active",
+    "source_url": null,
+    "last_verified_at": "2026-09-11T14:31:46.086Z"
+  },
+  {
+    "name": "Motorola Edge 60 Ultra",
+    "brand": "Motorola",
+    "price": 59999,
+    "description": "Vegan leather back with 125W fast charging.",
+    "specs": {
+      "chip": "Snapdragon 8 Elite",
+      "battery": "5500 mAh",
+      "display": "6.7-inch pOLED"
+    },
+    "currency": "INR",
+    "slug": "motorola-edge-60-ultra",
+    "category_id": 1,
+    "status": "active",
+    "source_url": null,
+    "last_verified_at": "2026-09-11T14:31:46.086Z"
+  },
+  {
+    "name": "Motorola Edge 50 Pro",
+    "brand": "Motorola",
+    "price": 31999,
+    "description": "Premium mid-range with 144Hz pOLED and 125W charging.",
+    "specs": {
+      "chip": "Snapdragon 7 Gen 3",
+      "battery": "4500 mAh",
+      "display": "6.7-inch pOLED"
+    },
+    "currency": "INR",
+    "slug": "motorola-edge-50-pro",
+    "category_id": 1,
+    "status": "active",
+    "source_url": null,
+    "last_verified_at": "2026-09-11T14:31:46.086Z"
+  },
+  {
+    "name": "Motorola Edge 50 Fusion",
+    "brand": "Motorola",
+    "price": 22999,
+    "description": "Style-focused phone with curved display.",
+    "specs": {
+      "chip": "Snapdragon 7 Gen 2",
+      "battery": "5000 mAh",
+      "display": "6.7-inch pOLED"
+    },
+    "currency": "INR",
+    "slug": "motorola-edge-50-fusion",
+    "category_id": 1,
+    "status": "active",
+    "source_url": null,
+    "last_verified_at": "2026-09-11T14:31:46.086Z"
+  },
+  {
+    "name": "Motorola Edge 50 Ultra",
+    "brand": "Motorola",
+    "price": 49999,
+    "description": "Flagship with wood/leather back.",
+    "specs": {
+      "chip": "Snapdragon 8s Gen 3",
+      "battery": "4500 mAh",
+      "display": "6.7-inch pOLED"
+    },
+    "currency": "INR",
+    "slug": "motorola-edge-50-ultra",
+    "category_id": 1,
+    "status": "active",
+    "source_url": null,
+    "last_verified_at": "2026-09-11T14:31:46.086Z"
+  },
+  {
+    "name": "Motorola Razr 50 Ultra",
+    "brand": "Motorola",
+    "price": 89999,
+    "description": "Premium foldable with large external display.",
+    "specs": {
+      "chip": "Snapdragon 8s Gen 3",
+      "battery": "4000 mAh",
+      "display": "7.0-inch pOLED"
+    },
+    "currency": "INR",
+    "slug": "motorola-razr-50-ultra",
+    "category_id": 1,
+    "status": "active",
+    "source_url": null,
+    "last_verified_at": "2026-09-11T14:31:46.086Z"
+  },
+  {
+    "name": "Motorola Razr 50",
+    "brand": "Motorola",
+    "price": 59999,
+    "description": "Budget foldable with good specs.",
+    "specs": {
+      "chip": "Dimensity 7300",
+      "battery": "4200 mAh",
+      "display": "6.9-inch pOLED"
+    },
+    "currency": "INR",
+    "slug": "motorola-razr-50",
+    "category_id": 1,
+    "status": "active",
+    "source_url": null,
+    "last_verified_at": "2026-09-11T14:31:46.086Z"
+  },
+  {
+    "name": "Motorola G85 5G",
+    "brand": "Motorola",
+    "price": 17999,
+    "description": "Budget phone with 120Hz pOLED display.",
+    "specs": {
+      "chip": "Snapdragon 6 Gen 1",
+      "battery": "5000 mAh",
+      "display": "6.67-inch pOLED"
+    },
+    "currency": "INR",
+    "slug": "motorola-g85-5g",
+    "category_id": 1,
+    "status": "active",
+    "source_url": null,
+    "last_verified_at": "2026-09-11T14:31:46.086Z"
+  },
+  {
+    "name": "Motorola G54 5G",
+    "brand": "Motorola",
+    "price": 13999,
+    "description": "Older budget phone with big battery.",
+    "specs": {
+      "chip": "Dimensity 7020",
+      "battery": "6000 mAh",
+      "display": "6.5-inch LCD"
+    },
+    "currency": "INR",
+    "slug": "motorola-g54-5g",
+    "category_id": 1,
+    "status": "active",
+    "source_url": null,
+    "last_verified_at": "2026-09-11T14:31:46.086Z"
+  },
+  {
+    "name": "Motorola G64 5G",
+    "brand": "Motorola",
+    "price": 14999,
+    "description": "Mid-range with 6000mAh battery.",
+    "specs": {
+      "chip": "Dimensity 7025",
+      "battery": "6000 mAh",
+      "display": "6.5-inch LCD"
+    },
+    "currency": "INR",
+    "slug": "motorola-g64-5g",
+    "category_id": 1,
+    "status": "active",
+    "source_url": null,
+    "last_verified_at": "2026-09-11T14:31:46.086Z"
+  },
+  {
+    "name": "Motorola Edge 40",
+    "brand": "Motorola",
+    "price": 26999,
+    "description": "Older flagship killer.",
+    "specs": {
+      "chip": "Dimensity 8020",
+      "battery": "4400 mAh",
+      "display": "6.55-inch pOLED"
+    },
+    "currency": "INR",
+    "slug": "motorola-edge-40",
+    "category_id": 1,
+    "status": "active",
+    "source_url": null,
+    "last_verified_at": "2026-09-11T14:31:46.086Z"
+  },
+  {
+    "name": "Asus ROG Phone 9 Pro",
+    "brand": "Asus",
+    "price": 89999,
+    "description": "Ultimate gaming phone with 165Hz display.",
+    "specs": {
+      "chip": "Snapdragon 8 Elite",
+      "battery": "5800 mAh",
+      "display": "6.78-inch AMOLED"
+    },
+    "currency": "INR",
+    "slug": "asus-rog-phone-9-pro",
+    "category_id": 1,
+    "status": "active",
+    "source_url": null,
+    "last_verified_at": "2026-09-11T14:31:46.086Z"
+  },
+  {
+    "name": "Asus ROG Phone 8 Pro",
+    "brand": "Asus",
+    "price": 71999,
+    "description": "Last gen gaming beast with active cooling.",
+    "specs": {
+      "chip": "Snapdragon 8 Gen 3",
+      "battery": "5500 mAh",
+      "display": "6.78-inch AMOLED"
+    },
+    "currency": "INR",
+    "slug": "asus-rog-phone-8-pro",
+    "category_id": 1,
+    "status": "active",
+    "source_url": null,
+    "last_verified_at": "2026-09-11T14:31:46.086Z"
+  },
+  {
+    "name": "Asus ROG Phone 8",
+    "brand": "Asus",
+    "price": 64999,
+    "description": "Base gaming flagship.",
+    "specs": {
+      "chip": "Snapdragon 8 Gen 3",
+      "battery": "5500 mAh",
+      "display": "6.78-inch AMOLED"
+    },
+    "currency": "INR",
+    "slug": "asus-rog-phone-8",
+    "category_id": 1,
+    "status": "active",
+    "source_url": null,
+    "last_verified_at": "2026-09-11T14:31:46.086Z"
+  },
+  {
+    "name": "Asus Zenfone 11 Ultra",
+    "brand": "Asus",
+    "price": 69999,
+    "description": "Compact flagship experience with AI features.",
+    "specs": {
+      "chip": "Snapdragon 8 Gen 3",
+      "battery": "5500 mAh",
+      "display": "6.78-inch AMOLED"
+    },
+    "currency": "INR",
+    "slug": "asus-zenfone-11-ultra",
+    "category_id": 1,
+    "status": "active",
+    "source_url": null,
+    "last_verified_at": "2026-09-11T14:31:46.086Z"
+  },
+  {
+    "name": "Asus Zenfone 10",
+    "brand": "Asus",
+    "price": 54999,
+    "description": "Compact flagship with Snapdragon 8 Gen 2.",
+    "specs": {
+      "chip": "Snapdragon 8 Gen 2",
+      "battery": "4300 mAh",
+      "display": "5.92-inch AMOLED"
+    },
+    "currency": "INR",
+    "slug": "asus-zenfone-10",
+    "category_id": 1,
+    "status": "active",
+    "source_url": null,
+    "last_verified_at": "2026-09-11T14:31:46.086Z"
+  },
+  {
+    "name": "Asus ROG Phone 7",
+    "brand": "Asus",
+    "price": 39999,
+    "description": "Budget gaming phone with 165Hz display.",
+    "specs": {
+      "chip": "Snapdragon 8+ Gen 1",
+      "battery": "6000 mAh",
+      "display": "6.78-inch AMOLED"
+    },
+    "currency": "INR",
+    "slug": "asus-rog-phone-7",
+    "category_id": 1,
+    "status": "active",
+    "source_url": null,
+    "last_verified_at": "2026-09-11T14:31:46.086Z"
+  },
+  {
+    "name": "Asus ROG Phone 6D",
+    "brand": "Asus",
+    "price": 44999,
+    "description": "Older gaming with Dimensity 9000+.",
+    "specs": {
+      "chip": "Dimensity 9000+",
+      "battery": "6000 mAh",
+      "display": "6.78-inch AMOLED"
+    },
+    "currency": "INR",
+    "slug": "asus-rog-phone-6d",
+    "category_id": 1,
+    "status": "active",
+    "source_url": null,
+    "last_verified_at": "2026-09-11T14:31:46.086Z"
+  },
+  {
+    "name": "Asus Zenfone 9",
+    "brand": "Asus",
+    "price": 39999,
+    "description": "Older compact flagship.",
+    "specs": {
+      "chip": "Snapdragon 8+ Gen 1",
+      "battery": "4300 mAh",
+      "display": "5.9-inch AMOLED"
+    },
+    "currency": "INR",
+    "slug": "asus-zenfone-9",
+    "category_id": 1,
+    "status": "active",
+    "source_url": null,
+    "last_verified_at": "2026-09-11T14:31:46.086Z"
+  },
+  {
+    "name": "Asus ROG Phone 5",
+    "brand": "Asus",
+    "price": 29999,
+    "description": "Older gaming beast.",
+    "specs": {
+      "chip": "Snapdragon 888",
+      "battery": "6000 mAh",
+      "display": "6.78-inch AMOLED"
+    },
+    "currency": "INR",
+    "slug": "asus-rog-phone-5",
+    "category_id": 1,
+    "status": "active",
+    "source_url": null,
+    "last_verified_at": "2026-09-11T14:31:46.086Z"
+  },
+  {
+    "name": "Asus Zenfone 8",
+    "brand": "Asus",
+    "price": 24999,
+    "description": "Older compact flagship.",
+    "specs": {
+      "chip": "Snapdragon 888",
+      "battery": "4000 mAh",
+      "display": "5.9-inch AMOLED"
+    },
+    "currency": "INR",
+    "slug": "asus-zenfone-8",
+    "category_id": 1,
+    "status": "active",
+    "source_url": null,
+    "last_verified_at": "2026-09-11T14:31:46.086Z"
+  },
+  {
+    "name": "iPhone 13",
+    "brand": "Apple",
+    "price": 49999,
+    "description": "Apple flagship with A15 Bionic chip, Super Retina XDR display, and advanced dual-camera system.",
+    "specs": {
+      "chip": "A15 Bionic",
+      "battery": "3240 mAh",
+      "display": "6.1-inch Super Retina XDR OLED"
+    },
+    "currency": "INR",
+    "slug": "iphone-13",
+    "category_id": 1,
+    "status": "active",
+    "source_url": null,
+    "last_verified_at": "2026-09-11T14:31:46.086Z"
+  }
+]

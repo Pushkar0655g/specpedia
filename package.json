@@ -4,7 +4,9 @@
   "scripts": {
     "build": "npm --prefix client run build",
     "client": "npm --prefix client run dev",
-    "server": "npm --prefix server run dev"
+    "server": "npm --prefix server run dev",
+    "seed": "npm --prefix server run seed",
+    "alerts:check": "npm --prefix server run alerts:check"
   },
   "dependencies": {
     "@google/generative-ai": "^0.24.1",
