@@ -120,6 +120,8 @@ app.get('/', (req, res) => {
 // API Routes
 app.use('/api/v1/items', itemsRouter);
 app.use('/api/items', itemsRouter);
+app.use('/api/v1/ai/chat', chatRouter);
+app.use('/api/ai/chat', chatRouter);
 app.use('/api/v1/ai/recommend', recommendRouter);
 app.use('/api/ai/recommend', recommendRouter);
 app.use('/api/v1/ai/explain', explainRouter);

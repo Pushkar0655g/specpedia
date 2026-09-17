@@ -6,40 +6,172 @@ import { TTLCache } from '../ai/cache.js';
 
 dotenv.config();
 const router = express.Router();
+
+const statsCache = new TTLCache();
 const moversCache = new TTLCache();
 
 const supabase = createClient(process.env.SUPABASE_URL, process.env.SUPABASE_ANON_KEY);
 
-// GET /stats — lightweight counts for stats band
+// GET /stats — returns { totalDevices, totalBrands, avgPrice, currency: 'INR' } with 5-minute TTL cache
 router.get('/stats', async (req, res) => {
   try {
-    const { count: deviceCount, error: countErr } = await supabase
+    const cached = statsCache.get('items:stats');
+    if (cached) {
+      return res.json(cached);
+    }
+
+    const { data, error } = await supabase
       .from('items')
-      .select('id', { count: 'exact', head: true })
+      .select('id, brand, price')
       .eq('category_id', 1);
 
-    if (countErr) throw countErr;
+    if (error) throw error;
 
-    const { data: brandData, error: brandErr } = await supabase
+    const items = data || [];
+    const totalDevices = items.length;
+    const uniqueBrands = new Set(items.map((r) => r.brand).filter(Boolean));
+    const totalBrands = uniqueBrands.size;
+
+    const pricedItems = items.filter((r) => typeof r.price === 'number' && r.price > 0);
+    const avgPrice =
+      pricedItems.length > 0
+        ? Math.round(pricedItems.reduce((acc, r) => acc + r.price, 0) / pricedItems.length)
+        : 0;
+
+    const result = {
+      totalDevices,
+      totalBrands,
+      avgPrice,
+      currency: 'INR',
+      // backward compatibility for client components using deviceCount / brandCount
+      deviceCount: totalDevices,
+      brandCount: totalBrands,
+    };
+
+    statsCache.set('items:stats', result, 5 * 60 * 1000);
+    res.json(result);
+  } catch (err) {
+    console.error('Error fetching stats:', err);
+    res.status(500).json({ error: 'Failed to fetch catalog' });
+  }
+});
+
+// GET /brands — distinct brands with counts, category_id=1 only
+router.get('/brands', async (req, res) => {
+  try {
+    const { data, error } = await supabase
       .from('items')
       .select('brand')
       .eq('category_id', 1);
 
-    if (brandErr) throw brandErr;
+    if (error) throw error;
 
-    const uniqueBrands = new Set((brandData || []).map(r => r.brand).filter(Boolean));
+    const brandCounts = (data || []).reduce((acc, item) => {
+      if (item.brand) {
+        acc[item.brand] = (acc[item.brand] || 0) + 1;
+      }
+      return acc;
+    }, {});
 
-    res.json({
-      deviceCount: deviceCount || 0,
-      brandCount: uniqueBrands.size,
-    });
+    const brands = Object.keys(brandCounts).map((b) => ({
+      name: b,
+      brand: b,
+      count: brandCounts[b],
+    }));
+    res.json(brands);
   } catch (err) {
-    console.error('Error fetching stats:', err);
-    res.status(500).json({ error: 'Failed to fetch stats' });
+    console.error('Error fetching brands:', err);
+    res.status(500).json({ error: 'Failed to fetch catalog' });
   }
 });
 
-// GET all items (with optional category, brand, limit, offset, slug)
+// GET /movers — top 5 risers and top 5 fallers based on weekly price history with 10-minute TTL cache
+router.get('/movers', async (req, res) => {
+  try {
+    const cached = moversCache.get('items:movers');
+    if (cached) {
+      return res.json(cached);
+    }
+
+    // Try reading from public.price_history table
+    const { data: historyRows, error: historyErr } = await supabase
+      .from('price_history')
+      .select('item_id, price, recorded_at')
+      .order('recorded_at', { ascending: false });
+
+    // If table doesn't exist or query fails or empty, degrade gracefully
+    if (historyErr || !historyRows || historyRows.length === 0) {
+      const fallback = { risers: [], fallers: [] };
+      moversCache.set('items:movers', fallback, 10 * 60 * 1000);
+      return res.json(fallback);
+    }
+
+    // Fetch items catalog to join name/slug/price
+    const { data: items, error: itemsErr } = await supabase
+      .from('items')
+      .select('id, name, slug, price, brand')
+      .eq('category_id', 1);
+
+    if (itemsErr) throw itemsErr;
+    const itemsMap = new Map((items || []).map((it) => [it.id, it]));
+
+    const getSlug = (it) =>
+      it.slug ||
+      (it.name || '')
+        .toLowerCase()
+        .replace(/[^a-z0-9]+/g, '-')
+        .replace(/(^-|-$)/g, '') ||
+      String(it.id);
+
+    // Group history by item_id
+    const itemHistories = new Map();
+    for (const row of historyRows) {
+      if (!itemHistories.has(row.item_id)) {
+        itemHistories.set(row.item_id, []);
+      }
+      const list = itemHistories.get(row.item_id);
+      if (list.length < 12) {
+        list.push(row);
+      }
+    }
+
+    const calculatedMovers = [];
+    for (const [itemId, rows] of itemHistories.entries()) {
+      const it = itemsMap.get(itemId);
+      if (!it || rows.length < 2) continue;
+      const latestPrice = Number(rows[0].price);
+      const prevPrice = Number(rows[1].price);
+      if (prevPrice <= 0 || isNaN(latestPrice) || isNaN(prevPrice)) continue;
+      const deltaPercent = Number((((latestPrice - prevPrice) / prevPrice) * 100).toFixed(1));
+      calculatedMovers.push({
+        id: it.id,
+        name: it.name,
+        slug: getSlug(it),
+        price: latestPrice,
+        currency: it.currency || 'INR',
+        deltaPercent,
+        history: [...rows].reverse(),
+      });
+    }
+
+    const risers = [...calculatedMovers]
+      .sort((a, b) => b.deltaPercent - a.deltaPercent)
+      .slice(0, 5);
+
+    const fallers = [...calculatedMovers]
+      .sort((a, b) => a.deltaPercent - b.deltaPercent)
+      .slice(0, 5);
+
+    const result = { risers, fallers };
+    moversCache.set('items:movers', result, 10 * 60 * 1000);
+    res.json(result);
+  } catch (err) {
+    console.error('Error fetching movers:', err);
+    res.status(500).json({ error: 'Failed to fetch catalog' });
+  }
+});
+
+// GET / — all items (with optional category, brand, limit, offset, slug)
 router.get('/', async (req, res) => {
   try {
     const { category, brand, slug } = req.query;
@@ -97,153 +229,43 @@ router.get('/', async (req, res) => {
   }
 });
 
-// GET all unique brands with item counts (Mobiles only, selecting only brand)
-router.get('/brands', async (req, res) => {
+// GET /:id/history — returns price_history rows for that item ordered by recorded_at ASC. 404 if item missing, empty array if no history rows.
+router.get('/:id/history', async (req, res) => {
   try {
-    const { data, error } = await supabase
+    const itemId = parseInt(req.params.id, 10);
+    if (isNaN(itemId)) {
+      return res.status(400).json({ error: 'Invalid item ID' });
+    }
+
+    const { data: item, error: itemErr } = await supabase
       .from('items')
-      .select('brand')
-      .eq('category_id', 1);
+      .select('id')
+      .eq('id', itemId)
+      .maybeSingle();
 
-    if (error) throw error;
+    if (itemErr) throw itemErr;
+    if (!item) {
+      return res.status(404).json({ error: 'Item not found' });
+    }
 
-    const brandCounts = data.reduce((acc, item) => {
-      if (item.brand) {
-        acc[item.brand] = (acc[item.brand] || 0) + 1;
-      }
-      return acc;
-    }, {});
+    const { data: historyRows, error: historyErr } = await supabase
+      .from('price_history')
+      .select('id, item_id, price, recorded_at')
+      .eq('item_id', itemId)
+      .order('recorded_at', { ascending: true });
 
-    const brands = Object.keys(brandCounts).map((b) => ({
-      name: b,
-      brand: b,
-      count: brandCounts[b],
-    }));
-    res.json(brands);
+    if (historyErr || !historyRows) {
+      return res.json([]);
+    }
+
+    res.json(historyRows);
   } catch (err) {
-    console.error('Error fetching brands:', err);
+    console.error(`Error fetching price history for item ${req.params.id}:`, err);
     res.status(500).json({ error: 'Failed to fetch catalog' });
   }
 });
 
-// GET /movers — top 5 risers and top 5 fallers based on weekly price history
-router.get('/movers', async (req, res) => {
-  try {
-    const cached = moversCache.get('items:movers');
-    if (cached) {
-      return res.json(cached);
-    }
-
-    // Try fetching from price_history table
-    const { data: historyRows, error: historyErr } = await supabase
-      .from('price_history')
-      .select('item_id, price, recorded_at')
-      .order('recorded_at', { ascending: false });
-
-    // Fetch items catalog
-    const { data: items, error: itemsErr } = await supabase
-      .from('items')
-      .select('id, name, price, brand')
-      .eq('category_id', 1);
-
-    if (itemsErr) throw itemsErr;
-    const itemsMap = new Map((items || []).map((it) => [it.id, it]));
-
-    const getSlug = (it) =>
-      (it.name || '')
-        .toLowerCase()
-        .replace(/[^a-z0-9]+/g, '-')
-        .replace(/(^-|-$)/g, '') || String(it.id);
-
-    let calculatedMovers = [];
-
-    if (!historyErr && historyRows && historyRows.length > 0) {
-      // Group by item_id
-      const itemHistories = new Map();
-      for (const row of historyRows) {
-        if (!itemHistories.has(row.item_id)) {
-          itemHistories.set(row.item_id, []);
-        }
-        const list = itemHistories.get(row.item_id);
-        if (list.length < 12) {
-          list.push(row);
-        }
-      }
-
-      for (const [itemId, rows] of itemHistories.entries()) {
-        const it = itemsMap.get(itemId);
-        if (!it || rows.length < 2) continue;
-        const latestPrice = Number(rows[0].price);
-        const prevPrice = Number(rows[1].price);
-        if (prevPrice <= 0) continue;
-        const deltaPercent = Number((((latestPrice - prevPrice) / prevPrice) * 100).toFixed(1));
-        calculatedMovers.push({
-          id: it.id,
-          name: it.name,
-          slug: getSlug(it),
-          price: latestPrice,
-          currency: it.currency || 'INR',
-          deltaPercent,
-          history: [...rows].reverse(),
-        });
-      }
-    }
-
-    // Fallback if price_history table is empty/missing
-    if (calculatedMovers.length < 10) {
-      calculatedMovers = [];
-      const now = new Date();
-      const ONE_WEEK_MS = 7 * 24 * 60 * 60 * 1000;
-      for (const it of (items || [])) {
-        const cur = Number(it.price);
-        if (!cur || isNaN(cur)) continue;
-        const history = [];
-        for (let i = 11; i >= 0; i--) {
-          const ptTime = new Date(now.getTime() - i * ONE_WEEK_MS);
-          const delta = ((((i + 1) * 23 + it.id * 17) % 29) - 14) / 100;
-          const ptPrice = i === 0 ? cur : Math.round(cur * (1 + delta));
-          history.push({
-            id: i + 1,
-            item_id: it.id,
-            price: ptPrice,
-            recorded_at: ptTime.toISOString(),
-          });
-        }
-        const latestPrice = cur;
-        const prevPrice = history[history.length - 2].price;
-        const deltaPercent = Number((((latestPrice - prevPrice) / prevPrice) * 100).toFixed(1));
-        calculatedMovers.push({
-          id: it.id,
-          name: it.name,
-          slug: getSlug(it),
-          price: latestPrice,
-          currency: it.currency || 'INR',
-          deltaPercent,
-          history,
-        });
-      }
-    }
-
-    // Risers: sorted by deltaPercent descending
-    const risers = [...calculatedMovers]
-      .sort((a, b) => b.deltaPercent - a.deltaPercent)
-      .slice(0, 5);
-
-    // Fallers: sorted by deltaPercent ascending
-    const fallers = [...calculatedMovers]
-      .sort((a, b) => a.deltaPercent - b.deltaPercent)
-      .slice(0, 5);
-
-    const result = { risers, fallers };
-    moversCache.set('items:movers', result, 10 * 60 * 1000); // 10-minute TTL
-    res.json(result);
-  } catch (err) {
-    console.error('Error fetching movers:', err);
-    res.status(500).json({ error: 'Failed to fetch movers' });
-  }
-});
-
-// GET single item by ID
+// GET /:id — single item by ID
 router.get('/:id', async (req, res) => {
   try {
     const { data, error } = await supabase
@@ -263,57 +285,6 @@ router.get('/:id', async (req, res) => {
   } catch (err) {
     console.error(`Error fetching item ${req.params.id}:`, err);
     res.status(500).json({ error: 'Failed to fetch catalog' });
-  }
-});
-
-// GET price history for single item by ID (public, ascending)
-router.get('/:id/history', async (req, res) => {
-  try {
-    const itemId = parseInt(req.params.id, 10);
-    if (isNaN(itemId)) {
-      return res.status(400).json({ error: 'Invalid item ID' });
-    }
-
-    const { data, error } = await supabase
-      .from('price_history')
-      .select('id, item_id, price, recorded_at')
-      .eq('item_id', itemId)
-      .order('recorded_at', { ascending: true });
-
-    if (error || !data || data.length === 0) {
-      const { data: item } = await supabase
-        .from('items')
-        .select('id, price')
-        .eq('id', itemId)
-        .maybeSingle();
-
-      if (!item) {
-        return res.status(404).json({ error: 'Item not found' });
-      }
-
-      // Generate 12 weekly history points ending at current price if table is empty
-      const now = new Date();
-      const ONE_WEEK_MS = 7 * 24 * 60 * 60 * 1000;
-      const fallbackPoints = [];
-      const cur = Number(item.price);
-      for (let i = 11; i >= 0; i--) {
-        const ptTime = new Date(now.getTime() - i * ONE_WEEK_MS);
-        const delta = ((i * 17) % 7 - 3) / 100;
-        const ptPrice = i === 0 ? cur : Math.round(cur * (1 + delta));
-        fallbackPoints.push({
-          id: i + 1,
-          item_id: itemId,
-          price: ptPrice,
-          recorded_at: ptTime.toISOString(),
-        });
-      }
-      return res.json(fallbackPoints);
-    }
-
-    res.json(data);
-  } catch (err) {
-    console.error(`Error fetching price history for item ${req.params.id}:`, err);
-    res.status(500).json({ error: 'Failed to fetch price history' });
   }
 });
 

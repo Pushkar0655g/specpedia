@@ -6,10 +6,16 @@ import { get, set } from '../ai/cache.js';
 
 const router = express.Router();
 
-const explainSchema = z.object({
-  key: z.string().min(1, 'Key is required').max(40, 'Key max length is 40'),
-  value: z.string().min(1, 'Value is required').max(120, 'Value max length is 120'),
-});
+const explainSchema = z
+  .object({
+    key: z.string().min(1).max(40).optional(),
+    value: z.string().min(1).max(120).optional(),
+    specKey: z.string().min(1).max(40).optional(),
+    specValue: z.string().min(1).max(120).optional(),
+  })
+  .refine((data) => (data.key || data.specKey) && (data.value || data.specValue), {
+    message: 'Key and Value are required',
+  });
 
 export const handleExplain = async (req, res) => {
   const parseResult = explainSchema.safeParse(req.body);
@@ -18,7 +24,8 @@ export const handleExplain = async (req, res) => {
     return res.status(400).json({ error: errorMsg });
   }
 
-  const { key, value } = parseResult.data;
+  const key = parseResult.data.key || parseResult.data.specKey;
+  const value = parseResult.data.value || parseResult.data.specValue;
   const cacheKey = `${key}:${value}`;
 
   try {

@@ -20,7 +20,7 @@ const chatSchema = z.object({
 });
 
 // Non-streaming chat endpoint (e.g. for Compare verdicts)
-router.post('/chat', async (req, res) => {
+const handleChat = async (req, res) => {
   const parseResult = chatSchema.safeParse(req.body);
   if (!parseResult.success) {
     const errorMsg = parseResult.error.errors?.[0]?.message || 'Invalid request body';
@@ -49,7 +49,10 @@ router.post('/chat', async (req, res) => {
     if (error.error) console.error(error.error);
     return res.status(500).json({ error: 'Failed to fetch AI response' });
   }
-});
+};
+
+router.post('/', handleChat);
+router.post('/chat', handleChat);
 
 // Streaming handler supporting SSE
 const handleStream = async (req, res) => {
