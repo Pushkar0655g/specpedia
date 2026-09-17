@@ -4,8 +4,8 @@ import { createClient } from '@supabase/supabase-js';
 dotenv.config();
 
 const supabase = createClient(
-  process.env.SUPABASE_URL || '',
-  process.env.SUPABASE_ANON_KEY || ''
+  process.env.SUPABASE_URL || 'https://dnsaundkonfquugtocne.supabase.co',
+  process.env.SUPABASE_ANON_KEY || 'sb_publishable_7rGXkjvk-GBy3EOp2iowTQ_OZ6SDylR'
 );
 
 /**

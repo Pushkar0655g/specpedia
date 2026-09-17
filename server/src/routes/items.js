@@ -10,7 +10,10 @@ const router = express.Router();
 const statsCache = new TTLCache();
 const moversCache = new TTLCache();
 
-const supabase = createClient(process.env.SUPABASE_URL, process.env.SUPABASE_ANON_KEY);
+const supabase = createClient(
+  process.env.SUPABASE_URL || 'https://dnsaundkonfquugtocne.supabase.co',
+  process.env.SUPABASE_ANON_KEY || 'sb_publishable_7rGXkjvk-GBy3EOp2iowTQ_OZ6SDylR'
+);
 
 // GET /stats — returns { totalDevices, totalBrands, avgPrice, currency: 'INR' } with 5-minute TTL cache
 router.get('/stats', async (req, res) => {
